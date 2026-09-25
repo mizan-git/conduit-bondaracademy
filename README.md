@@ -75,3 +75,40 @@ After a test run is complete, a report is generated.
 `allure generate allure-results --clean -o allure-report && allure open allure-report`
 `allure generate allure-results  --single-file --clean -o allure-report`
 
+## ⚙️ CI/CD - GitHub Actions
+
+This project includes a GitHub Actions workflow (`.github/workflows/playwright.yml`) that runs the full test suite automatically on every push or pull request to `main`/`master`.
+
+### GitHub Secrets Setup
+
+All sensitive environment variables are stored as GitHub Secrets. Never commit these values to the repository.
+
+Go to your repository on GitHub:
+**Settings → Secrets and variables → Actions → New repository secret**
+
+Add the following secrets:
+
+| Secret Name | Description | Example Value |
+|---|---|---|
+| `PROD_URL` | Base URL of the application under test | `https://conduit.bondaracademy.com` |
+| `API_URL` | Base URL of the API | `https://conduit-api.bondaracademy.com/api` |
+| `TEST_USERNAME` | Login email for the test user | `test+mizan@test.com` |
+| `TEST_PASSWORD` | Login password for the test user | `test1234` |
+| `TEST_TAG` | Tag used for article filtering tests | `playwright-test` |
+| `UPDATED_BIO` | Bio value used in user settings tests | `This is an updated bio for Playwright testing.` |
+| `UPDATED_EMAIL` | Email value used in user settings tests | `test+mizan@test.com` |
+
+### Workflow Triggers
+
+- **Push** to `main` or `master`
+- **Pull Request** to `main` or `master`
+- **Manual** trigger via GitHub Actions → Run workflow
+
+### Artifacts
+
+After each run, the following artifacts are uploaded and retained for **15 days**:
+
+- `playwright-report` — Playwright HTML report
+- `allure-results` — Raw Allure results
+- `test-results` — Screenshots and traces on failure
+

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Playwright TypeScript tests for conduit-bondaracademy",
   "scripts": {
-    "test": "npx playwright test --headed",
+    "test": "npx playwright test",
     "all_test": "npx playwright test --headed --project=firefox",
     "allure_report": "allure generate allure-results --clean -o allure-report && allure open allure-report",
     "single_report": "allure generate allure-results  --single-file --clean -o allure-report",
