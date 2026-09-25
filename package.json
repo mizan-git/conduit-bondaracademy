@@ -1,0 +1,21 @@
+{
+  "name": "conduit-bondaracademy",
+  "version": "1.0.0",
+  "description": "Playwright TypeScript tests for conduit-bondaracademy",
+  "scripts": {
+    "test": "npx playwright test --headed",
+    "all_test": "npx playwright test --headed --project=firefox",
+    "allure_report": "allure generate allure-results --clean -o allure-report && allure open allure-report",
+    "single_report": "allure generate allure-results  --single-file --clean -o allure-report",
+    "clean": "rimraf allure-results allure-report",
+    "test:clean": "npm run clean && npm run all_test && npm run single_report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^20.11.0",
+    "allure-playwright": "^3.12.2",
+    "dotenv": "^16.4.5",
+    "rimraf": "^6.1.3",
+    "typescript": "^5.4.0"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "article": {
+    "description": "This is a test article description.",
+    "body": "This is the body of the test article, created via Playwright.",
+    "tags": ["playwright"],
+    "updatedBody": "This is the updated body content.",
+    "deleteDescription": "Description for deletion.",
+    "deleteBody": "Body for deletion.",
+    "filterDesc": "desc",
+    "filterBody": "body",
+    "filterExtraTag": "another-tag",
+    "filterUnrelatedTag": "random",
+    "nonExistentTagPrefix": "nonexistent-tag"
+  },
+  "userSettings": {
+    "invalidEmail": "invalid-email"
+  }
+}

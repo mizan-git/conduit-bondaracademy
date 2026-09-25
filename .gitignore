@@ -1,0 +1,15 @@
+# Dependencies
+/node_modules
+/target
+__pycache__/
+*.pyc
+
+# Environment Variables
+.env
+
+# Playwright
+playwright/.auth/
+test-results/
+playwright-report/
+allure-results/
+allure-report/
